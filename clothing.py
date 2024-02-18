@@ -67,7 +67,7 @@ class clothing_items:
 def weather_input(weather):
     weather_clothes = []
     if weather == "Warm":
-        weather_clothes = ["T-shirt", "Trouser", "f_Trouser", "Dress", "Sandal", "Shirt", "Sneaker", "Bag"]
+        weather_clothes = ["T-shirt", "Trouser", "f_Trouser", "Dress", "Sandal", "Shirt", "Sneaker", "Bag", "Boot"]
     elif weather == "Cold":
         weather_clothes = ["Trouser",  "Pullover", "f_Trouser", "Coat", "Shirt", "Bag",  "Boot"]
     elif weather == "Medium":
@@ -75,18 +75,28 @@ def weather_input(weather):
     return weather_clothes
 
 def occasion_input(occasion, weather_clothes): #narrows down the list of clothes based on the occasion
+    return_list = []
+    for item in (weather_clothes):
+        return_list.append(item)
+
     for item in (weather_clothes):
         if occasion == "Casual":
             if item == "Shirt" or item == "Dress" or item == "f_Trouser":
-                weather_clothes.remove(item)
+                return_list.remove(item)
+            else:
+                continue
         elif occasion == "Formal":
-            if item == "Pullover" or item == "T-shirt" or item == "Sandal" or item == "Dress" or item == "Sneaker" or item == "Trouser" :
-                weather_clothes.remove(item)
+            if (item == "Pullover" or item == "Sandal" or item == "T-shirt" or item == "Dress" or item == "Sneaker" or item == "Trouser" ):
+                return_list.remove(item)
+            else:
+                continue
         elif occasion == "Event":
             if item == "T-shirt" or item == "Pullover" or item == "Trouser":
-                weather_clothes.remove(item)
+                return_list.remove(item)
+            else:
+                continue
     
-    return weather_clothes
+    return return_list
 
 
 
@@ -99,7 +109,7 @@ def occasion_input(occasion, weather_clothes): #narrows down the list of clothes
 
 outfit = weather_input("Warm")
 print(outfit)
-occasion_input("Formal", outfit)
+outfit = occasion_input("Formal", outfit)
 print(outfit)
 
 # enter the folder of the clothing item
