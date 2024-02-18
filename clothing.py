@@ -67,23 +67,23 @@ class clothing_items:
 def weather_input(weather):
     weather_clothes = []
     if weather == "Warm":
-        weather_clothes = ["T-shirt", "Trouser", "Dress", "Sandal", "Shirt", "Sneaker", "Bag"]
+        weather_clothes = ["T-shirt", "Trouser", "f_Trouser", "Dress", "Sandal", "Shirt", "Sneaker", "Bag"]
     elif weather == "Cold":
-        weather_clothes = ["Trouser",  "Pullover", "Coat", "Shirt", "Bag",  "Boot"]
+        weather_clothes = ["Trouser",  "Pullover", "f_Trouser", "Coat", "Shirt", "Bag",  "Boot"]
     elif weather == "Medium":
-        weather_clothes = ["Trouser", "Pullover", "Coat", "Shirt", "Sneaker",  "Bag"]
+        weather_clothes = ["Trouser", "Pullover", "f_Trouser", "Coat", "Shirt", "Sneaker",  "Bag"]
     return weather_clothes
 
 def occasion_input(occasion, weather_clothes): #narrows down the list of clothes based on the occasion
     for item in (weather_clothes):
         if occasion == "Casual":
-            if item == "Shirt" or item == "Dress":
+            if item == "Shirt" or item == "Dress" or item == "f_Trouser":
                 weather_clothes.remove(item)
         elif occasion == "Formal":
-            if item == "Pullover" or item == "T-shirt" or item == "Sandal" or item == "Dress" or item == "Sneaker":
+            if item == "Pullover" or item == "T-shirt" or item == "Sandal" or item == "Dress" or item == "Sneaker" or item == "Trouser" :
                 weather_clothes.remove(item)
         elif occasion == "Event":
-            if item == "T-shirt" or item == "Pullover":
+            if item == "T-shirt" or item == "Pullover" or item == "Trouser":
                 weather_clothes.remove(item)
     
     return weather_clothes
@@ -97,9 +97,9 @@ def occasion_input(occasion, weather_clothes): #narrows down the list of clothes
 
 #my_closet[0].display()
 
-outfit = weather_input("Cold")
+outfit = weather_input("Warm")
 print(outfit)
-occasion_input("Casual", outfit)
+occasion_input("Formal", outfit)
 print(outfit)
 
 # enter the folder of the clothing item

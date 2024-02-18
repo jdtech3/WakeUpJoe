@@ -24,8 +24,8 @@
 		<!-- Nav -->
 		<nav id="nav">
 			<a href="#" class="icon solid fa-home"><span>Home</span></a>
-			<a href="https://twitter.com/ajlkn" class="icon solid fa-calendar-day"><span>Schedule</span></a>
-			<a href="#contact" class="icon solid fa-cloud-sun"><span>Weather</span></a>
+			<a href="#schedule" class="icon solid fa-calendar-day"><span>Schedule</span></a>
+			<a href="#weather" class="icon solid fa-cloud-sun"><span>Weather</span></a>
 			<a href="#closet" class="icon solid fa-user-tie"><span>Closet</span></a>
 			<a href="#breakfast" class="icon solid fa-egg"><span>Breakfast</span></a>
 		</nav>
@@ -38,12 +38,24 @@
 				<header>
 					<h1>Good Morning, Joe. </h1>
 					<p>Let us help you start your day, pick your outfit and make you breakfast!</p>
+
 				</header>
 				<a href="#work" class="jumplink pic">
 					<span class="arrow icon solid fa-chevron-right"><span>See my work</span></span>
 					<img src="images/start_screen_2.png" alt="" />
 				</a>
 			</article>
+			<!-- Weather -->
+            <article id="weather" class="panel">
+                <iframe
+                    src="https://www.meteoblue.com/en/weather/widget/three/toronto_canada_6167865?geoloc=fixed&nocurrent=0&noforecast=0&days=5&tempunit=CELSIUS&windunit=KILOMETER_PER_HOUR&layout=image"
+                    frameborder="0" scrolling="NO" allowtransparency="true"
+                    sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox"
+                    style="width: 800px; height: 605px"></iframe>
+                <div><!-- DO NOT REMOVE THIS LINK --><a
+                        href="https://www.meteoblue.com/en/weather/week/toronto_canada_6167865?utm_source=weather_widget&utm_medium=linkus&utm_content=three&utm_campaign=Weather%2BWidget"
+                        target="_blank" rel="noopener">meteoblue</a></div>
+            </article>
 
 			<!-- Work -->
 			<article id="closet" class="panel">
@@ -77,6 +89,20 @@
 						</div>
 						
 					</div>
+				</section>
+			</article>
+
+			<!-- Work -->
+			<article id="schedule" class="panel">
+				<header>
+					<h2> Here is your schedule for today</h2>
+				</header>
+				<p>
+					<iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FToronto&bgcolor=%23ffffff&mode=AGENDA&title=Joe's%20Day&src=YXZhbmkueWFkYXZAZ21haWwuY29t&src=ZXdiLmNhXzJiYTlkdm5kMW9tY2wxZjhsdXZhMWNidTg4QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23039BE5&color=%23F6BF26" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>				
+				</p>
+				
+					<section>
+					
 				</section>
 			</article>
 
