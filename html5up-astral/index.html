@@ -7,194 +7,211 @@
 <html>
 
 <head>
-	<title>Astral by HTML5 UP</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<noscript>
-		<link rel="stylesheet" href="assets/css/noscript.css" />
-	</noscript>
+    <title>Astral by HTML5 UP</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="static/assets/css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="static/assets/css/noscript.css" />
+    </noscript>
+
+    <script src="https://unpkg.com/htmx.org@1.9.10"
+        integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
+        crossorigin="anonymous"></script>
 </head>
 
 <body class="is-preload">
 
-	<!-- Wrapper-->
-	<div id="wrapper">
+    <!-- Wrapper-->
+    <div id="wrapper">
 
-		<!-- Nav -->
-		<nav id="nav">
-			<a href="#" class="icon solid fa-home"><span>Home</span></a>
-			<a href="#schedule" class="icon solid fa-calendar-day"><span>Schedule</span></a>
-			<a href="#weather" class="icon solid fa-cloud-sun"><span>Weather</span></a>
-			<a href="#closet" class="icon solid fa-user-tie"><span>Closet</span></a>
-			<a href="#breakfast" class="icon solid fa-egg"><span>Breakfast</span></a>
-		</nav>
+        <!-- Nav -->
+        <nav id="nav">
+            <a href="#" class="icon solid fa-home"><span>Home</span></a>
+            <a href="#calendar" class="icon solid fa-calendar-day"><span>Schedule</span></a>
+            <a href="#weather" class="icon solid fa-cloud-sun"><span>Weather</span></a>
+            <a href="#closet" class="icon solid fa-user-tie"><span>Closet</span></a>
+            <a href="#breakfast" class="icon solid fa-egg"><span>Breakfast</span></a>
+        </nav>
 
-		<!-- Main -->
-		<div id="main">
+        <!-- Main -->
+        <div id="main">
 
-			<!-- Me -->
-			<article id="home" class="panel intro">
-				<header>
-					<h1>Good Morning, Joe. </h1>
-					<p>Let us help you start your day, pick your outfit and make you breakfast!</p>
+            <!-- Me -->
+            <article id="home" class="panel intro">
+                <header>
+                    <h1>Good Morning, Joe. </h1>
+                    <p>Let us help you start your day, pick your outfit and make you breakfast!</p>
 
-				</header>
-				<a href="#work" class="jumplink pic">
-					<span class="arrow icon solid fa-chevron-right"><span>See my work</span></span>
-					<img src="images/start_screen_2.png" alt="" />
-				</a>
-			</article>
-			<!-- Weather -->
+                </header>
+                <a href="#work" class="jumplink pic">
+                    <span class="arrow icon solid fa-chevron-right"><span>See my work</span></span>
+                    <img src="static/images/start_screen_2.png" alt="" />
+                </a>
+            </article>
+            <!-- Weather -->
             <article id="weather" class="panel">
                 <iframe
                     src="https://www.meteoblue.com/en/weather/widget/three/toronto_canada_6167865?geoloc=fixed&nocurrent=0&noforecast=0&days=5&tempunit=CELSIUS&windunit=KILOMETER_PER_HOUR&layout=image"
                     frameborder="0" scrolling="NO" allowtransparency="true"
                     sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox"
-                    style="width: 800px; height: 605px"></iframe>
+                    style="width: 100%; height: 700px;"></iframe>
                 <div><!-- DO NOT REMOVE THIS LINK --><a
                         href="https://www.meteoblue.com/en/weather/week/toronto_canada_6167865?utm_source=weather_widget&utm_medium=linkus&utm_content=three&utm_campaign=Weather%2BWidget"
                         target="_blank" rel="noopener">meteoblue</a></div>
             </article>
 
-			<!-- Work -->
-			<article id="closet" class="panel">
-				<header>
-					<h2> Here are your outfit suggestions for today</h2>
-				</header>
-				<p>
-					Weather: Cold
-					<br>
-					Occasion: Casual
-				</p>
-				<section>
-					<div class="row">
-						<div class="col-4 col-6-medium col-12-small">
-							<a href="#" class="image fit"><img src="images/tshirt2.png" alt=""></a>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<a href="#" class="image fit"><img src="images/pullover1.png" alt=""></a>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<a href="#" class="image fit"><img src="images/trouser5.png" alt=""></a>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<a href="#" class="image fit"><img src="images/coat5.png" alt=""></a>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<a href="#" class="image fit"><img src="images/bag5.png" alt=""></a>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<a href="#" class="image fit"><img src="images/boot3.png" alt=""></a>
-						</div>
-						
-					</div>
-				</section>
-			</article>
+            <!-- Work -->
+            <article id="closet" class="panel">
+                <header>
+                    <h2> Here are your outfit suggestions for today</h2>
+                </header>
+                <p>
+                    Weather: Cold
+                    <br>
+                    Occasion: Casual
+                </p>
+                <section>
+                    <div class="row">
+                        <div class="col-4 col-6-medium col-12-small">
+                            <a href="#" class="image fit"><img src="static/images/tshirt2.png" alt=""></a>
+                        </div>
+                        <div class="col-4 col-6-medium col-12-small">
+                            <a href="#" class="image fit"><img src="static/images/pullover1.png" alt=""></a>
+                        </div>
+                        <div class="col-4 col-6-medium col-12-small">
+                            <a href="#" class="image fit"><img src="static/images/trouser5.png" alt=""></a>
+                        </div>
+                        <div class="col-4 col-6-medium col-12-small">
+                            <a href="#" class="image fit"><img src="static/images/coat5.png" alt=""></a>
+                        </div>
+                        <div class="col-4 col-6-medium col-12-small">
+                            <a href="#" class="image fit"><img src="static/images/bag5.png" alt=""></a>
+                        </div>
+                        <div class="col-4 col-6-medium col-12-small">
+                            <a href="#" class="image fit"><img src="static/images/boot3.png" alt=""></a>
+                        </div>
 
-			<!-- Work -->
-			<article id="schedule" class="panel">
-				<header>
-					<h2> Here is your schedule for today</h2>
-				</header>
-				<p>
-					<iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FToronto&bgcolor=%23ffffff&mode=AGENDA&title=Joe's%20Day&src=YXZhbmkueWFkYXZAZ21haWwuY29t&src=ZXdiLmNhXzJiYTlkdm5kMW9tY2wxZjhsdXZhMWNidTg4QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23039BE5&color=%23F6BF26" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>				
-				</p>
-				
-					<section>
-					
-				</section>
-			</article>
+                    </div>
+                </section>
+            </article>
 
-			<!-- Breakfast -->
-			<article id="breakfast" class="panel">
-				<header>
-					<h1>Here is your breakfast recepie for today!</h1></header>
-					<h2>Banana Oat Pancakes</h2> 
+            <!-- Work -->
+            <article id="calendar" class="panel">
+                <header>
+                    <h2> Here is your schedule for today</h2>
+                </header>
+                <p>
+                    <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FNew_York&bgcolor=%23E67C73&showDate=0&showPrint=0&mode=WEEK&showTitle=0&showNav=0&showTz=0&showCalendars=0&src=bGFuY2Vsb3Quc2hpaEBnbWFpbC5jb20&src=Y2xhc3Nyb29tMTEzNzk4NjI2MjE2NzMwNjIxNTcwQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%234285F4&color=%231c3aa9&color=%23A79B8E" 
+                    style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    <!-- <iframe
+                        src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FToronto&bgcolor=%23ffffff&mode=AGENDA&title=Joe's%20Day&src=YXZhbmkueWFkYXZAZ21haWwuY29t&src=ZXdiLmNhXzJiYTlkdm5kMW9tY2wxZjhsdXZhMWNidTg4QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23039BE5&color=%23F6BF26"
+                        style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe> -->
+                </p>
 
-					<div class="ingredients">
-						<img src="images/pancake.jpeg" alt="" align="right" width="200" height="200" style="margin-right: 20px;">
-						<h3>Ingredients:</h3>
-						<ul>
-						  <li>1 cup all-purpose flour</li>
-						  <li>2 tablespoons sugar</li>
-						  <li>1 tablespoon baking powder</li>
-						  <li>1/2 teaspoon salt</li>
-						  <li>1 cup milk</li>
-						  <li>2 tablespoons melted butter or vegetable oil</li>
-						  <li>1 large egg</li>
-						  <li>Butter or oil for frying</li>
-						</ul>
-					  </div>
+                <section>
 
-					  
+                </section>
+            </article>
+
+            <!-- Breakfast -->
+            <article id="breakfast" class="panel">
+                <header>
+                    <h1>Here is your breakfast recepie for today!</h1>
+                </header>
+                <h2>Banana Oat Pancakes</h2>
+
+                <div class="ingredients">
+                    <img src="static/images/pancake.jpeg" alt="" align="right" width="200" height="200"
+                        style="margin-right: 20px;">
+                    <h3>Ingredients:</h3>
+                    <ul>
+                        <li>1 cup all-purpose flour</li>
+                        <li>2 tablespoons sugar</li>
+                        <li>1 tablespoon baking powder</li>
+                        <li>1/2 teaspoon salt</li>
+                        <li>1 cup milk</li>
+                        <li>2 tablespoons melted butter or vegetable oil</li>
+                        <li>1 large egg</li>
+                        <li>Butter or oil for frying</li>
+                    </ul>
+                </div>
 
 
-					  <div class="instructions">
-						<h3>Instructions:</h3>
-						<ol>
-						  <li>In a large mixing bowl, whisk together the flour, sugar, baking powder, and salt.</li>
-						  <li>In another bowl, whisk together the milk, melted butter or oil, and egg.</li>
-						  <li>Pour the wet ingredients into the dry ingredients and stir until just combined. Do not overmix; a few lumps are okay.</li>
-						  <li>Heat a non-stick skillet or griddle over medium heat. Add a little butter or oil to coat the surface.</li>
-						  <li>Pour about 1/4 cup of batter onto the skillet for each pancake.</li>
-						  <li>Cook until bubbles form on the surface of the pancakes and the edges begin to look set, then flip and cook until golden brown on the other side.</li>
-						  <li>Repeat with the remaining batter, adding more butter or oil to the skillet as needed.</li>
-						  <li>Serve warm with your favorite toppings, such as maple syrup, fresh fruit, or whipped cream.</li>
-						</ol>
-					  </div>
-					
-					
-				</a>
-			</article>
 
-			<!-- Contact -->
-			<article id="contact" class="panel">
-				<header>
-					<h2>Contact Me</h2>
-				</header>
-				<form action="#" method="post">
-					<div>
-						<div class="row">
-							<div class="col-6 col-12-medium">
-								<input type="text" name="name" placeholder="Name" />
-							</div>
-							<div class="col-6 col-12-medium">
-								<input type="text" name="email" placeholder="Email" />
-							</div>
-							<div class="col-12">
-								<input type="text" name="subject" placeholder="Subject" />
-							</div>
-							<div class="col-12">
-								<textarea name="message" placeholder="Message" rows="6"></textarea>
-							</div>
-							<div class="col-12">
-								<input type="submit" value="Send Message" />
-							</div>
-						</div>
-					</div>
-				</form>
-			</article>
 
-		</div>
+                <div class="instructions">
+                    <h3>Instructions:</h3>
+                    <ol>
+                        <li>In a large mixing bowl, whisk together the flour, sugar, baking powder, and salt.</li>
+                        <li>In another bowl, whisk together the milk, melted butter or oil, and egg.</li>
+                        <li>Pour the wet ingredients into the dry ingredients and stir until just combined. Do not
+                            overmix; a few lumps are okay.</li>
+                        <li>Heat a non-stick skillet or griddle over medium heat. Add a little butter or oil to coat the
+                            surface.</li>
+                        <li>Pour about 1/4 cup of batter onto the skillet for each pancake.</li>
+                        <li>Cook until bubbles form on the surface of the pancakes and the edges begin to look set, then
+                            flip and cook until golden brown on the other side.</li>
+                        <li>Repeat with the remaining batter, adding more butter or oil to the skillet as needed.</li>
+                        <li>Serve warm with your favorite toppings, such as maple syrup, fresh fruit, or whipped cream.
+                        </li>
+                    </ol>
+                </div>
 
-		<!-- Footer -->
-		<div id="footer">
-			<ul class="copyright">
-				<li>&copy; Untitled.</li>
-				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-			</ul>
-		</div>
 
-	</div>
+                </a>
+            </article>
 
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
+            <!-- Contact -->
+            <article id="contact" class="panel">
+                <header>
+                    <h2>Contact Me</h2>
+                </header>
+                <form action="#" method="post">
+                    <div>
+                        <div class="row">
+                            <div class="col-6 col-12-medium">
+                                <input type="text" name="name" placeholder="Name" />
+                            </div>
+                            <div class="col-6 col-12-medium">
+                                <input type="text" name="email" placeholder="Email" />
+                            </div>
+                            <div class="col-12">
+                                <input type="text" name="subject" placeholder="Subject" />
+                            </div>
+                            <div class="col-12">
+                                <textarea name="message" placeholder="Message" rows="6"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <input type="submit" value="Send Message" />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </article>
 
+        </div>
+
+        <!-- Footer -->
+        <div id="footer">
+            <ul class="copyright">
+                <li>&copy; Untitled.</li>
+                <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="static/assets/js/jquery.min.js"></script>
+    <script src="static/assets/js/browser.min.js"></script>
+    <script src="static/assets/js/breakpoints.min.js"></script>
+    <script src="static/assets/js/util.js"></script>
+    <script src="static/assets/js/main.js"></script>
+
+    <div hx-get="http://192.168.205.142:5000/section" hx-trigger="every 2s">
+
+    </div>
 </body>
 
 </html>
