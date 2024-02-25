@@ -62,38 +62,8 @@
             </article>
 
             <!-- Work -->
-            <article id="closet" class="panel">
-                <header>
-                    <h2> Here are your outfit suggestions for today</h2>
-                </header>
-                <p>
-                    Weather: Cold
-                    <br>
-                    Occasion: Casual
-                </p>
-                <section>
-                    <div class="row">
-                        <div class="col-4 col-6-medium col-12-small">
-                            <a href="#" class="image fit"><img src="static/images/tshirt2.png" alt=""></a>
-                        </div>
-                        <div class="col-4 col-6-medium col-12-small">
-                            <a href="#" class="image fit"><img src="static/images/pullover1.png" alt=""></a>
-                        </div>
-                        <div class="col-4 col-6-medium col-12-small">
-                            <a href="#" class="image fit"><img src="static/images/trouser5.png" alt=""></a>
-                        </div>
-                        <div class="col-4 col-6-medium col-12-small">
-                            <a href="#" class="image fit"><img src="static/images/coat5.png" alt=""></a>
-                        </div>
-                        <div class="col-4 col-6-medium col-12-small">
-                            <a href="#" class="image fit"><img src="static/images/bag5.png" alt=""></a>
-                        </div>
-                        <div class="col-4 col-6-medium col-12-small">
-                            <a href="#" class="image fit"><img src="static/images/boot3.png" alt=""></a>
-                        </div>
+            <article id="closet" class="panel" hx-get="http://192.168.205.142:5000/closet" hx-trigger="every 2s">
 
-                    </div>
-                </section>
             </article>
 
             <!-- Work -->
@@ -102,8 +72,9 @@
                     <h2> Here is your schedule for today</h2>
                 </header>
                 <p>
-                    <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FNew_York&bgcolor=%23E67C73&showDate=0&showPrint=0&mode=WEEK&showTitle=0&showNav=0&showTz=0&showCalendars=0&src=bGFuY2Vsb3Quc2hpaEBnbWFpbC5jb20&src=Y2xhc3Nyb29tMTEzNzk4NjI2MjE2NzMwNjIxNTcwQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%234285F4&color=%231c3aa9&color=%23A79B8E" 
-                    style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    <iframe
+                        src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FNew_York&bgcolor=%23E67C73&showDate=0&showPrint=0&mode=WEEK&showTitle=0&showNav=0&showTz=0&showCalendars=0&src=bGFuY2Vsb3Quc2hpaEBnbWFpbC5jb20&src=Y2xhc3Nyb29tMTEzNzk4NjI2MjE2NzMwNjIxNTcwQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%234285F4&color=%231c3aa9&color=%23A79B8E"
+                        style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
                     <!-- <iframe
                         src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FToronto&bgcolor=%23ffffff&mode=AGENDA&title=Joe's%20Day&src=YXZhbmkueWFkYXZAZ21haWwuY29t&src=ZXdiLmNhXzJiYTlkdm5kMW9tY2wxZjhsdXZhMWNidTg4QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23039BE5&color=%23F6BF26"
                         style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe> -->

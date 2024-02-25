@@ -2,8 +2,8 @@
 import os
 import random
 from PIL import Image
-import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
+# import matplotlib.pyplot as plt
+# import matplotlib.image as mpimg
 
 
 class clothing_items:
@@ -98,8 +98,6 @@ def occasion_input(occasion, weather_clothes): #narrows down the list of clothes
     
     return return_list
 
-
-
     
 #my_closet = [clothing_items("T-shirt") , clothing_items("Shirt"), clothing_items("Trouser"), clothing_items("Coat"), clothing_items("Dress"), clothing_items("Sandal"), clothing_items("Sneaker"), clothing_items("Ankle boot"), clothing_items("Bag")]
 # mycloset has folders of each clothing item
@@ -107,36 +105,41 @@ def occasion_input(occasion, weather_clothes): #narrows down the list of clothes
 
 #my_closet[0].display()
 
-outfit = weather_input("Warm")
-print(outfit)
-outfit = occasion_input("Formal", outfit)
-print(outfit)
+def get_outfit(weather, occasion):
+    outfit = weather_input(weather)
+    print(outfit)
+    outfit = occasion_input(occasion, outfit)
+    print(outfit)
 
-# enter the folder of the clothing item
-# pull a random one from the folder
-# display the clothing item
+    shoe_list = [thing for thing in outfit if thing in ["Sandal", "Sneaker", "Boot"]]
+    outfit = [thing for thing in outfit if thing not in ["Sandal", "Sneaker", "Boot"]]
+    outfit.append(random.choice(shoe_list))
 
-folder_name = "myCloset"
-chosen_outfit = []
-for item in outfit:
-    folder_path = os.path.join(folder_name, item)
-    # randomly select a file from the folder
-    files = os.listdir(folder_path)
-    files = [file for file in files if os.path.isfile(os.path.join(folder_path, file))]
-    random_file = random.choice(files)
-    print("Randomly selected file:", random_file)
-    chosen_outfit.append(random_file)
+    # enter the folder of the clothing item
+    # pull a random one from the folder
+    # display the clothing item
 
-    # show image
-    image_path = os.path.join(folder_path, random_file)
-    print(image_path)
-    image = Image.open(image_path)
-    image.show()
-    #image = mpimg.imread(image_path)
-    #plt.imshow(image)
-    #plt.show()
+    folder_name = "static\images\myCloset"
+    chosen_outfit = []
+    for item in outfit:
+        folder_path = os.path.join(folder_name, item)
+        # randomly select a file from the folder
+        files = os.listdir(folder_path)
+        files = [file for file in files if os.path.isfile(os.path.join(folder_path, file))]
+        random_file = random.choice(files)
+        print("Randomly selected file:", random_file)
 
-print(chosen_outfit)
+        # show image
+        image_path = os.path.join(folder_path, random_file)
+        chosen_outfit.append(image_path)
+        # image = Image.open(image_path)
+        # image.show()
+        #image = mpimg.imread(image_path)
+        #plt.imshow(image)
+        #plt.show()
+
+    print(chosen_outfit)
+    return chosen_outfit
 
 '''
  # Open the selected PNG image

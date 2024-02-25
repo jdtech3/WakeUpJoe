@@ -3,8 +3,12 @@ from flask import request
 import requests
 from flask import render_template, make_response
 from spellchecker import SpellChecker
+from clothing import get_outfit
+import random
 
 current_state = '' # take post
+closet_changed = True
+closet_occasion = 'Casual'
 spellchecker = SpellChecker(distance=2)
 
 def parse_string(string, keywords):
@@ -12,7 +16,8 @@ def parse_string(string, keywords):
 
     for keyword in keywords:
         for word in string.split():
-            check = spellchecker.candidates(word)
+            # check = spellchecker.candidates(word)
+            check = None
             check = set() if check is None else check
             check.add(word)
             for w in check:
@@ -83,7 +88,7 @@ def section():
 @app.route('/command/<command>', methods=['GET'])
 def hdkCommands(command: str):
     global current_state
-    command = parse_string(command, ['schedule', 'agenda', 'timetable', 'itinerary', 'appointment', 'timeline', 'program', 'planner', 'calendar', 'diary', 'temperature','climate','meteorology','forecast','prediction','outlook','conditions','elements','weather', 'eat','munch','brunch','meal','food','hungry','starving','famished','craving','appetite','nutrient','breakfast', 'outfit','attire','wardrobe','clothing','dress','clothes', 'closet'])
+    command = parse_string(command, ['schedule', 'agenda', 'timetable', 'itinerary', 'appointment', 'timeline', 'program', 'planner', 'calendar', 'diary', 'temperature','climate','meteorology','forecast','prediction','outlook','conditions','elements','weather', 'eat','munch','brunch','meal','food','hungry','starving','famished','craving','appetite','nutrient','breakfast', 'outfit','attire','wardrobe','clothing','dress','clothes', 'closet', 'formal', 'casual', 'events'])
     print(command)
     command = command.lower()
     if command in ['schedule', 'agenda', 'timetable', 'itinerary', 'appointment', 'timeline', 'program', 'planner', 'calendar', 'diary']:
@@ -94,6 +99,26 @@ def hdkCommands(command: str):
         current_state = 'breakfast'
     elif command in ['outfit','attire','wardrobe','clothing','dress','clothes', 'closet']:
         current_state = 'closet'
+    elif command in ['formal', 'casual', 'events']:
+        global closet_changed
+        global closet_occasion
+        closet_changed = True
+        closet_occasion = command.capitalize()
 
     return 'OK'
 
+@app.route('/closet')
+def closet():
+    global closet_changed
+    global closet_occasion
+    if closet_changed:
+        closet_changed = False
+        weather = "Cold"
+        resp = make_response(render_template('closet.html', links=get_outfit(weather, closet_occasion), weather=weather, occasion=closet_occasion))
+        resp.headers['HX-Reswap'] = 'innerHTML'
+    else:
+        resp = make_response('NO SWAP', 200)
+        resp.headers['HX-Reswap'] = 'none'
+
+    return resp
+    
