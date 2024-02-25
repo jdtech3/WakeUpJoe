@@ -1,0 +1,17 @@
+<header>
+    <h2> Here are your outfit suggestions for today</h2>
+</header>
+<p>
+    Weather: {{ weather }}
+    <br>
+    Occasion: {{ occasion}}
+</p>
+<section>
+    <div class="row">
+        {% for link in links %}
+        <div class="col-4 col-6-medium col-12-small">
+            <a href="#" class="image fit"><img src="{{ link }}" alt=""></a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
