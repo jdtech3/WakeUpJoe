@@ -150,6 +150,7 @@ public class MainActivity extends AppCompatActivity implements Runnable {
             }
         );
 
+        requestQueue.cancelAll((req) -> { return true; });
         requestQueue.add(stringRequest);
     }
 
